@@ -2,11 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <p><h3>Hello,我是qjy,欢迎来到我的网页</h3></p>
-    <p><h3><a href="demos\chap1-demo-1.html">实验1</a></h3></p>
-    <p><h3><a href="demos\chap2-demo-1.html">实验2-1</a></h3></p>
-    <p><h3><a href="demos\chap2-demo-2.html">实验2-2</a></h3></p>
-    <p><h3><a href="demos\chap2-demo-3.html">实验2-3</a></h3></p>
+    <script>
+      var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+        CSS.supports('top: constant(a)'))
+      document.write(
+        '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+        (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+    </script>
+    <title></title>
+    <!--preload-links-->
+    <!--app-context-->
   </head>
   <body>
     <div id="app"><!--app-html--></div>
