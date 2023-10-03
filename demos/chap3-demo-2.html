@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画小车</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .car-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 50px auto;
+        }
+
+        .car-body {
+            width: 200px;
+            height: 100px;
+            background-color: #3498db;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .roof {
+            width: 120px;
+            height: 80px;
+            background-color: #f39c12;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .wheel {
+            width: 40px;
+            height: 40px;
+            background-color: #e74c3c;
+            position: absolute;
+            bottom: -20px;
+            border-radius: 50%;
+        }
+
+        .wheel-left {
+            left: 30px;
+        }
+
+        .wheel-right {
+            right: 30px;
+        }
+
+        #buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .animate {
+            animation: moveCar 2s linear infinite;
+        }
+
+        @keyframes moveCar {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(80vw);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="car-container">
+        <div class="car-body">
+            <div class="roof"></div>
+        </div>
+        <div class="wheel wheel-left"></div>
+        <div class="wheel wheel-right"></div>
+    </div>
+    <div id="buttons">
+        <button id="start-button" onclick="startAnimation()">启动</button>
+        <button id="reset-button" onclick="resetAnimation()">归位</button>
+    </div>
+
+    <script>
+        let animationInterval;
+        const carContainer = document.querySelector('.car-container');
+
+        function startAnimation() {
+            carContainer.classList.add('animate');
+        }
+
+        function resetAnimation() {
+            carContainer.classList.remove('animate');
+        }
+    </script>
+</body>
+</html>
